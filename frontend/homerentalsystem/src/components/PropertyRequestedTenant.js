@@ -6,7 +6,7 @@ const PropertyRequestedTenant = () => {
   const [obj, setObj] = useState([]);
 
   useEffect(() => {
-    fetch("http://13.53.190.118:8080/getallrequests")
+    fetch("http://51.20.34.217:8080/getallrequests")
       .then(res => res.json())
       .then(data => {
         setObj(data);

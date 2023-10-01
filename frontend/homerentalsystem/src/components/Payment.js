@@ -12,7 +12,7 @@ export default function Payment() {
 
     const[sub,setSub]=useState([]);
     useEffect(()=>{
-        fetch("http://13.53.190.118:8080/getallsubscriptions")
+        fetch("http://51.20.34.217:8080/getallsubscriptions")
         .then(res => res.json())
         .then(data => {setSub(data)})
         //return()=>{cont.abort()};
@@ -35,7 +35,7 @@ export default function Payment() {
                email:JSON.parse(localStorage.getItem("newReg"))
             })
         }
-        fetch("http://13.53.190.118:8080/regpayment", reqOptions)
+        fetch("http://51.20.34.217:8080/regpayment", reqOptions)
 
         //.then(resp => resp.json())
         .then(resp => {
@@ -48,7 +48,7 @@ export default function Payment() {
     }
 
     const populate=(id)=>{
-        fetch("http://13.53.190.118:8080/getsubbyid/"+id)
+        fetch("http://51.20.34.217:8080/getsubbyid/"+id)
         .then(res => res.json())
         .then(data => {setData(data)})
     }

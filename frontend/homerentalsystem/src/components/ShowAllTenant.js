@@ -11,7 +11,7 @@ export default function ShowAllTenant() {
 
     useEffect(() => {
         const firstURL = 'http://localhost:9000/getalltenants';
-        const secondURL = 'http://13.53.190.118:8080/getalltenants';
+        const secondURL = 'http://51.20.34.217:8080/getalltenants';
     
         fetch(firstURL)
           .then(response => {
@@ -47,7 +47,7 @@ export default function ShowAllTenant() {
   
      const deleteTenant =(id) =>
     {
-       fetch("http://13.53.190.118:8080/deletetenant/"+id,{method : "DELETE"})
+       fetch("http://51.20.34.217:8080/deletetenant/"+id,{method : "DELETE"})
        .then(resp => {
            if(resp.ok)
            { 

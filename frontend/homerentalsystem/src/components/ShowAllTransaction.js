@@ -5,7 +5,7 @@ const ShowAllTransaction = () => {
   const [transactions, setTransactions] = useState([]);
 
   // useEffect(() => {
-  //   fetch('http://13.53.190.118:8080/getalltransaction')
+  //   fetch('http://51.20.34.217:8080/getalltransaction')
   //   fetch('https://localhost:7236/api/Payments')
   //     .then(response => response.json())
   //     .then(data => setTransactions(data))
@@ -13,7 +13,7 @@ const ShowAllTransaction = () => {
   // }, []);
   useEffect(() => {
     const firstURL = 'https://localhost:7236/api/Payments';
-    const secondURL = 'http://13.53.190.118:8080/getalltransaction';
+    const secondURL = 'http://51.20.34.217:8080/getalltransaction';
 
     fetch(firstURL)
       .then(response => {

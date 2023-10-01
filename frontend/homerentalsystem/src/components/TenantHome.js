@@ -9,14 +9,14 @@ export default function TenantHome(){
     const[city,setCity]=useState();
     const[area,setArea]=useState();
     useEffect(()=>{
-        fetch("http://13.53.190.118:8080/getallcity")
+        fetch("http://51.20.34.217:8080/getallcity")
         .then(res => res.json())
         .then(data => {setCity(data)})
         //return()=>{cont.abort()};
      },[]);
     
     const getAreaByCity=(v)=>{
-        fetch("http://13.53.190.118:8080/getareabycity?city_id="+v)
+        fetch("http://51.20.34.217:8080/getareabycity?city_id="+v)
         .then(resp=>resp.json())
         .then(data=>setArea(data))
     }
@@ -24,19 +24,19 @@ export default function TenantHome(){
 
     const[property,setProperty]=useState();
     useEffect(()=>{
-        fetch("http://13.53.190.118:8080/getallproperty")
+        fetch("http://51.20.34.217:8080/getallproperty")
         .then(res => res.json())
         .then(data => {setProperty(data)})
         //return()=>{cont.abort()};
      },[]);
 
      const getPropertyByCity=(v)=>{
-        fetch("http://13.53.190.118:8080/getpropertybycityid/"+v)
+        fetch("http://51.20.34.217:8080/getpropertybycityid/"+v)
         .then(resp=>resp.json())
         .then(data=>setProperty(data))
     }
     const getPropertyByArea=(v)=>{
-        fetch("http://13.53.190.118:8080/getpropertybyareaid/"+v)
+        fetch("http://51.20.34.217:8080/getpropertybyareaid/"+v)
         .then(resp=>resp.json())
         .then(data=>setProperty(data))
     }
@@ -45,7 +45,7 @@ export default function TenantHome(){
 
 
     // useEffect(()=>{
-    //     fetch("http://13.53.190.118:8080/gettenantbyloginid/"+JSON.parse(localStorage.getItem("loggedUser")).id)
+    //     fetch("http://51.20.34.217:8080/gettenantbyloginid/"+JSON.parse(localStorage.getItem("loggedUser")).id)
     //     .then(res => res.json())
     //     .then(data => {setTenant(data);localStorage.setItem("loggedTenant",JSON.stringify(data));})
     //    // return()=>{cont.abort()};
@@ -56,7 +56,7 @@ export default function TenantHome(){
             const items = JSON.parse(localStorage.getItem('loggedUser')).id;
             if (items) {
             setId(items);
-            fetch("http://13.53.190.118:8080/gettenantbyloginid/"+items)
+            fetch("http://51.20.34.217:8080/gettenantbyloginid/"+items)
             .then(res => res.json())
             .then(data => {setTenant(data);localStorage.setItem("loggedTenant",JSON.stringify(data))})
             }
@@ -80,7 +80,7 @@ export default function TenantHome(){
             })
             
         }
-        fetch("http://13.53.190.118:8080/saverequest", reqOptions)
+        fetch("http://51.20.34.217:8080/saverequest", reqOptions)
     }
 
     return(

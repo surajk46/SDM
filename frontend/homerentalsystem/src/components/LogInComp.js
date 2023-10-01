@@ -33,7 +33,7 @@ export default function LoginComp() {
             body: JSON.stringify(info)
         };
 
-        fetch("http://13.53.190.118:8080/checklogin", reqOption)
+        fetch("http://51.20.34.217:8080/checklogin", reqOption)
             .then(resp => {
                 if (resp.ok)
                     return resp.text();

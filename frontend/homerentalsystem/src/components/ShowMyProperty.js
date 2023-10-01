@@ -12,14 +12,14 @@ export default function ShowMyProperty(){
     // const[city,setCity]=useState();
     // const[area,setArea]=useState();
     // useEffect(()=>{
-    //     fetch("http://13.53.190.118:8080/getallcity")
+    //     fetch("http://51.20.34.217:8080/getallcity")
     //     .then(res => res.json())
     //     .then(data => {setCity(data)})
     //     //return()=>{cont.abort()};
     //  },[]);
     
     // const getAreaByCity=(v)=>{
-    //     fetch("http://13.53.190.118:8080/getareabycity?city_id="+v)
+    //     fetch("http://51.20.34.217:8080/getareabycity?city_id="+v)
     //     .then(resp=>resp.json())
     //     .then(data=>setArea(data))
     // }
@@ -27,19 +27,19 @@ export default function ShowMyProperty(){
 
     const[property,setProperty]=useState();
     useEffect(()=>{
-        fetch("http://13.53.190.118:8080/getpropertybyownerid/"+JSON.parse(localStorage.getItem("loggedOwner")).id)
+        fetch("http://51.20.34.217:8080/getpropertybyownerid/"+JSON.parse(localStorage.getItem("loggedOwner")).id)
         .then(res => res.json())
         .then(data => {setProperty(data)})
      },[]);
 
     
     //  const getPropertyByCity=(v)=>{
-    //     fetch("http://13.53.190.118:8080/getpropertybycityid/"+v)
+    //     fetch("http://51.20.34.217:8080/getpropertybycityid/"+v)
     //     .then(resp=>resp.json())
     //     .then(data=>setProperty(data))
     // }
     // const getPropertyByArea=(v)=>{
-    //     fetch("http://13.53.190.118:8080/getpropertybyareaid/"+v)
+    //     fetch("http://51.20.34.217:8080/getpropertybyareaid/"+v)
     //     .then(resp=>resp.json())
     //     .then(data=>setProperty(data))
     // }
@@ -48,7 +48,7 @@ export default function ShowMyProperty(){
     
     const deleteProperty =(id) =>
     {
-       fetch("http://13.53.190.118:8080/deleteproperty/"+id,{ method: 'DELETE'})
+       fetch("http://51.20.34.217:8080/deleteproperty/"+id,{ method: 'DELETE'})
        .then(resp => {
            if(resp.ok)
            { 

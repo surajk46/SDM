@@ -9,7 +9,7 @@ const OwnerInfo = () => {
 
   useEffect(() => {
     // Fetch owner data based on ownerId from your API
-    fetch(`http://13.53.190.118:8080/getownerbyid/${JSON.parse(localStorage.getItem("property")).owner_id.id}`)
+    fetch(`http://51.20.34.217:8080/getownerbyid/${JSON.parse(localStorage.getItem("property")).owner_id.id}`)
       .then((response) => response.json())
       .then((data) => setOwner(data));
   }, [ownerId]);

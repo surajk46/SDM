@@ -13,7 +13,7 @@ export default function HomeFunc(){
         useEffect(() => {
             const firstURL = 'https://localhost:7236/api/Cities';
             
-            const secondURL = 'http://13.53.190.118:8080/getallcity';
+            const secondURL = 'http://51.20.34.217:8080/getallcity';
         
             fetch(firstURL)
               .then(resp => {
@@ -50,7 +50,7 @@ export default function HomeFunc(){
 
      
     const getAreaByCity=(v)=>{
-        fetch("http://13.53.190.118:8080/getareabycity?city_id="+v)
+        fetch("http://51.20.34.217:8080/getareabycity?city_id="+v)
         .then(resp=>resp.json())
         .then(data=>setArea(data))
     }
@@ -58,19 +58,19 @@ export default function HomeFunc(){
 
     const[property,setProperty]=useState();
     useEffect(()=>{
-        fetch("http://13.53.190.118:8080/getallproperty")
+        fetch("http://51.20.34.217:8080/getallproperty")
         .then(res => res.json())
         .then(data => {setProperty(data)})
         //return()=>{cont.abort()};
      },[]);
 
      const getPropertyByCity=(v)=>{
-        fetch("http://13.53.190.118:8080/getpropertybycityid/"+v)
+        fetch("http://51.20.34.217:8080/getpropertybycityid/"+v)
         .then(resp=>resp.json())
         .then(data=>setProperty(data))
     }
     const getPropertyByArea=(v)=>{
-        fetch("http://13.53.190.118:8080/getpropertybyareaid/"+v)
+        fetch("http://51.20.34.217:8080/getpropertybyareaid/"+v)
         .then(resp=>resp.json())
         .then(data=>setProperty(data))
     }

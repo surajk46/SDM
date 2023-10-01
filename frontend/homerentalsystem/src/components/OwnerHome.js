@@ -13,7 +13,7 @@ export default function OwnerHome() {
             const items = JSON.parse(localStorage.getItem('loggedUser')).id;
             if (items) {
             setId(items);
-            fetch("http://13.53.190.118:8080/getownerbyloginid/"+items)
+            fetch("http://51.20.34.217:8080/getownerbyloginid/"+items)
             .then(res => res.json())
             .then(data => {setOwner(data);localStorage.setItem("loggedOwner",JSON.stringify(data))})
             }

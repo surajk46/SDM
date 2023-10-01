@@ -4,24 +4,24 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function AddProperty1() {
    // const cont=new AbortController();
    const[cities,setCities]=useState([]);
-   const CITYURL="http://13.53.190.118:8080/getallcity";
+   const CITYURL="http://51.20.34.217:8080/getallcity";
 
    const[areas,setAreas]=useState([]);
    const[cityid,setCityid]=useState(1);
-  // const AREAURL="http://13.53.190.118:8080/getallarea"//+cityid;//need to add areaid
+  // const AREAURL="http://51.20.34.217:8080/getallarea"//+cityid;//need to add areaid
 
    const[propertytype,setPropertytype]=useState([]);
-   const PROPERTYTYPEURL="http://13.53.190.118:8080/getallpropertytype";
+   const PROPERTYTYPEURL="http://51.20.34.217:8080/getallpropertytype";
 
    const[homeFacility,setHomeFacility]=useState([]);
-   const FACILITYURL="http://13.53.190.118:8080/getallfacility";
+   const FACILITYURL="http://51.20.34.217:8080/getallfacility";
    
  
    
-   var AREAURL="http://13.53.190.118:8080/getareabycity?city_id="+cityid;//need to add areaid
+   var AREAURL="http://51.20.34.217:8080/getareabycity?city_id="+cityid;//need to add areaid
 
    const getArea=(v)=>{
-    fetch("http://13.53.190.118:8080/getareabycity?city_id="+v)
+    fetch("http://51.20.34.217:8080/getareabycity?city_id="+v)
     .then(resp=>resp.json())
     .then(data=>setAreas(data))
 }
@@ -182,7 +182,7 @@ const [item, setItem] = useState(1);
             })
             
         }
-        fetch("http://13.53.190.118:8080/regproperty", reqOptions)
+        fetch("http://51.20.34.217:8080/regproperty", reqOptions)
         .then(resp => {
             if(resp.ok)
                 return resp.json();
@@ -197,7 +197,7 @@ const [item, setItem] = useState(1);
               //  headers:{'content-type':'multipart/form-data'},
                 body:fd
             }
-            fetch("http://13.53.190.118:8080/uploadimage/"+obj.id,reqOptions1)
+            fetch("http://51.20.34.217:8080/uploadimage/"+obj.id,reqOptions1)
             .then(resq=>resq.json())
             .then(obj=>{
                 console.log(obj)

@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 export default function TenantReg() {
    // const cont=new AbortController();
     const[cities,setCities]=useState([]);
-    const CITYURL="http://13.53.190.118:8080/getallcity";
+    const CITYURL="http://51.20.34.217:8080/getallcity";
 
     var[areas,setAreas]=useState([]);
     const[cityid,setCityid]=useState(1);
-    var AREAURL="http://13.53.190.118:8080/getareabycity?city_id="+cityid;//need to add areaid
+    var AREAURL="http://51.20.34.217:8080/getareabycity?city_id="+cityid;//need to add areaid
     const ci=()=>{
         setCityid(info.city.value);
     }
@@ -19,7 +19,7 @@ export default function TenantReg() {
         // areas=areas.filter(a=>{
         //     return a.city_id=cityid;
         // })
-      // var AREAURL="http://13.53.190.118:8080/getareabycity?city_id="+cityid;//need to add areaid
+      // var AREAURL="http://51.20.34.217:8080/getareabycity?city_id="+cityid;//need to add areaid
 
         
         setFiltered(areas.filter(a=>{
@@ -29,7 +29,7 @@ export default function TenantReg() {
     const navigate = useNavigate(); 
 
     const getArea=(v)=>{
-        fetch("http://13.53.190.118:8080/getareabycity?city_id="+v)
+        fetch("http://51.20.34.217:8080/getareabycity?city_id="+v)
         .then(resp=>resp.json())
         .then(data=>setAreas(data))
    }
@@ -198,7 +198,7 @@ useEffect(()=>{
             })
             
         }
-        fetch("http://13.53.190.118:8080/regowner", reqOptions)
+        fetch("http://51.20.34.217:8080/regowner", reqOptions)
         //.then(resp => resp.json())
         .then(localStorage.setItem("newReg",JSON.stringify(info.email.value)))
         .then(resp => {
