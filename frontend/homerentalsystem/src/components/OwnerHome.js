@@ -30,9 +30,52 @@ export default function OwnerHome() {
     
     
  
-   
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  }
         return (
-            <div className="container mt-5">
+            <div >
+                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    onClick={toggleNav}
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+               <div className={`collapse navbar-collapse ${ isNavOpen ? 'show' : '' }`} >
+                    <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                        <Link to="/addproperty" className="nav-link">
+                        Add Property
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/showmyproperty" className="nav-link">
+                        Show My Property
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/propreq" className="nav-link">
+                        Property Request
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/ownerhome" className="nav-link">
+                        Owner Home
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/logout" className="nav-link">
+                        Log Out
+                        </Link>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
             <h1 className="text-center mb-4">Welcome, Property Owner!</h1>
             <div className="row justify-content-center align-items-center">
                 <div className="col-lg-4">

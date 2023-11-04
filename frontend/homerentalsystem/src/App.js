@@ -21,30 +21,48 @@ import FooterComponent from './components/Footer';
 import Payment from './components/Payment';
 import ShowAllTransaction from './components/ShowAllTransaction';
 import PropertyRequestedTenant from './components/PropertyRequestedTenant';
+import { useState } from 'react';
 
 function App() {
 
     const mystate = useSelector((state)=>state.logged)
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsNavbarOpen(!isNavbarOpen);
+    };
   return (
     <div className="App">
-       <div style={{display:mystate.loggedIn?"none":"block"}}>
-           <ul class="nav navbar">
-                <li class="nav-item">
-                    <Link to="/" class="nav-link">Home</Link>
-                </li>
-                <li class="nav-item">
-                    <Link to="/login" class="nav-link">Log In</Link>
-                </li>
-                <li class="nav-item">
-                    <Link to="/tenantreg" class="nav-link">Tenant Registration</Link>
-                </li>
-                <li class="nav-item">
-                    <Link to="/ownerreg" class="nav-link">Owner Registration</Link>
-                </li>
-               
-            </ul>
-           
-       </div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{display:mystate.loggedIn?"none":"block"}}>
+            <button
+                className={`navbar-toggler ${isNavbarOpen ? 'collapsed' : ''}`}
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded={isNavbarOpen}
+                aria-label="Toggle navigation"
+                onClick={toggleNavbar}
+            >
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNav">
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <Link to="/" className="nav-link">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/login" className="nav-link">Log In</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/tenantreg" className="nav-link">Tenant Registration</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/ownerreg" className="nav-link">Owner Registration</Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
 
